@@ -8,10 +8,26 @@ describe("Question Mount", () => {
 
         const dummyQuestion = {
             id: (new Date).toDateString(),
-            title: "new question"
+            title: "new question",
+            options: []
         }
 
         render(<Question question={dummyQuestion} />);
         expect(screen.getByRole("heading", { name: /new question/i })).toBeInTheDocument();
     });
+
+    it("must display 2 options", () => {
+
+        const dummyQuestion = {
+            id: (new Date).toDateString(),
+            title: "new question",
+            options: [
+                { title: "Option 1" },
+                { title: "Option 2" },
+            ]
+        }
+
+        render(<Question question={dummyQuestion} />);
+        expect(screen.queryAllByRole('checkbox')).toHaveLength(2);
+    })
 });
