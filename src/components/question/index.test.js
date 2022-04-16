@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 
 import Question from "./index";
 
-describe("Question Mount", () => {
+describe("<Question />", () => {
     it("must display the question title", () => {
 
         const dummyQuestion = {
