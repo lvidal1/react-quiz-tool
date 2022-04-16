@@ -11,7 +11,7 @@ interface QuestionProps {
     question: IQuestion;
 }
 
-const Question = ({ question }: QuestionProps) => <div>
+const Question = ({ question }: QuestionProps) => <div className="bg-gray-100 p-3">
     <h2>{question.title}</h2>
     <div>
         {question.options.map(option => <>
