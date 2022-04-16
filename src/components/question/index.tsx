@@ -8,7 +8,7 @@ interface QuestionProps {
 }
 
 const Question = ({ question }: QuestionProps) => <div>
-    {question.title}
+    <h2>{question.title}</h2>
 </div>;
 
 

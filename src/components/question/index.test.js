@@ -12,6 +12,6 @@ describe("Question Mount", () => {
         }
 
         render(<Question question={dummyQuestion} />);
-        expect(screen.getByText(/new question/)).toBeInTheDocument();
+        expect(screen.getByRole("heading", { name: /new question/i })).toBeInTheDocument();
     });
 });
