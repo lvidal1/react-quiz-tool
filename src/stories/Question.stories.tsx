@@ -4,6 +4,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Question from '../components/question';
 
+const getUniqueID = () => Date.now() + ((Math.random() * 100000).toFixed());
+
 export default {
     /* 👇 The title prop is optional.
     * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
@@ -13,13 +15,13 @@ export default {
     component: Question,
 } as ComponentMeta<typeof Question>;
 
-const dummyQuestion = {
-    id: (new Date).toDateString(),
-    title: "new question",
+const testQuestion = {
+    id: getUniqueID(),
+    title: "Mark all correct answers",
     options: [
-        { title: "Option 1" },
-        { title: "Option 2" },
+        { id: getUniqueID(), title: "Option 1" },
+        { id: getUniqueID(), title: "Option 2" },
     ]
 }
 
-export const Basic: ComponentStory<typeof Question> = () => <Question question={dummyQuestion} />;
+export const Basic: ComponentStory<typeof Question> = () => <Question question={testQuestion} />;
